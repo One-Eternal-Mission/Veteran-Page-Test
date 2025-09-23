@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stand With Veterans</title>
+  <meta name="description" content="A simple landing page focused on supporting veterans.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/hero-flag.svg" as="image" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">★</span>
+        <span class="brand-name">Stand With Veterans</span>
+      </div>
+      <nav class="site-nav" aria-label="Primary">
+        <button class="menu-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+        <ul id="menu" class="menu">
+          <li><a href="#mission">Mission</a></li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#get-involved">Get Involved</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" role="region" aria-label="Hero">
+      <div class="hero-media">
+        <img src="assets/hero-flag.svg" alt="" aria-hidden="true">
+      </div>
+      <div class="hero-content container">
+        <h1>Support Those Who Served</h1>
+        <p class="lead">Our mission is to raise awareness and give back to veteran-focused causes.</p>
+        <div class="cta-row">
+          <!-- Placeholder buttons only; no live links yet -->
+          <button class="btn primary" data-placeholder>Learn More</button>
+          <button class="btn ghost" data-placeholder>Our Mission</button>
+        </div>
+        <p class="placeholder-note" role="note">Buttons are placeholders — links will be wired later.</p>
+      </div>
+    </section>
+
+    <section id="mission" class="section">
+      <div class="container narrow">
+        <h2>Our Mission</h2>
+        <p>
+          We’re building a community that honors veterans through awareness and tangible support.
+          A portion of proceeds from our future campaigns will be directed to vetted organizations
+          that provide real benefits to veterans and their families.
+        </p>
+        <ul class="bullets">
+          <li>Elevate veteran stories and resources.</li>
+          <li>Design apparel that sparks conversations.</li>
+          <li>Give back through transparent campaigns.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="programs" class="section alt">
+      <div class="container">
+        <h2>Focus Areas</h2>
+        <div class="card-grid">
+          <article class="card">
+            <h3>Awareness</h3>
+            <p>Campaigns that spotlight veteran needs and services.</p>
+            <button class="btn small" data-placeholder>Coming Soon</button>
+          </article>
+          <article class="card">
+            <h3>Community</h3>
+            <p>Local meetups and support networks (TBD).</p>
+            <button class="btn small" data-placeholder>Coming Soon</button>
+          </article>
+          <article class="card">
+            <h3>Give Back</h3>
+            <p>Future drops that donate a portion of proceeds.</p>
+            <button class="btn small" data-placeholder>Coming Soon</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="get-involved" class="section">
+      <div class="container narrow">
+        <h2>How You Can Help</h2>
+        <p>We’ll add live links later. For now, these are label-only buttons.</p>
+        <div class="cta-grid">
+          <button class="btn block" data-placeholder>Donate</button>
+          <button class="btn block" data-placeholder>Volunteer</button>
+          <button class="btn block" data-placeholder>Shop</button>
+          <button class="btn block" data-placeholder>Learn</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Stand With Veterans. All rights reserved.</p>
+      <p class="small">No live chat or external links yet — per current scope.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
