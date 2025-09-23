@@ -6,7 +6,6 @@
   <title>Veteran Support — You Are Not Alone</title>
   <meta name="description" content="A calming, supportive place for veterans seeking help. Resources, testimonies, and simple next steps.">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="assets/hero-support.svg" as="image" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -28,28 +27,21 @@
   </header>
 
   <main id="top">
-    <section class="hero hero-support" role="region" aria-label="Hero">
-      <div class="hero-media">
-        <img src="assets/hero-support.svg" alt="" aria-hidden="true">
-      </div>
-      <div class="hero-content container">
+    <!-- HERO -->
+    <section class="hero hero-photo" role="region" aria-label="Hero">
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-content container center">
         <h1><span class="eyebrow">Stand Tall, Veteran</span> You Are Not Alone</h1>
-        <p class="lead">If you're struggling, this page is a safe place to start. We’ll guide you toward people and tools that can help — today.</p>
-        <div class="cta-row">
-          <button class="btn primary" data-placeholder>Get Support</button>
-          <button class="btn ghost" data-placeholder>Find Resources</button>
-        </div>
-        <p class="hotline">If you are in immediate crisis, call or text <strong>988</strong> then press <strong>1</strong> (Veterans Crisis Line). <span class="muted">(We’ll add a live link later.)</span></p>
+        <a class="btn callout" href="#" aria-disabled="true">Get Support</a>
+        <p class="hotline">If you are in immediate crisis, call or text <strong>988</strong> then press <strong>1</strong> (Veterans Crisis Line).</p>
       </div>
     </section>
 
+    <!-- HELP -->
     <section id="help" class="section">
       <div class="container narrow">
         <h2>We’re Here to Help</h2>
-        <p>
-          You don’t have to carry this alone. This site will grow with practical next steps, contacts,
-          and stories from other veterans who’ve been where you are. For now, these buttons are labels only.
-        </p>
+        <p>You don’t have to carry this alone. This site will grow with practical next steps, contacts, and stories from other veterans who’ve been where you are. For now, these buttons are labels only.</p>
         <div class="cta-grid">
           <button class="btn block" data-placeholder>Talk to Someone</button>
           <button class="btn block" data-placeholder>Request a Call Back</button>
@@ -59,6 +51,7 @@
       </div>
     </section>
 
+    <!-- TESTIMONIES -->
     <section id="testimonies" class="section alt">
       <div class="container">
         <h2>Video Testimonies (Coming Soon)</h2>
@@ -85,6 +78,7 @@
       </div>
     </section>
 
+    <!-- RESOURCES -->
     <section id="resources" class="section">
       <div class="container narrow">
         <h2>Support Resources</h2>
