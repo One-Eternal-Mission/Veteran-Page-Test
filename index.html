@@ -6,9 +6,10 @@
   <title>Veteran Support — You Are Not Alone</title>
   <meta name="description" content="A calming, supportive place for veterans seeking help. Resources, testimonies, and simple next steps.">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
- <link rel="stylesheet" href="styles.css?v=2">
+  <link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body>
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="#top" aria-label="Veteran Support home">
@@ -26,14 +27,30 @@
     </div>
   </header>
 
+  <!-- HERO -->
   <main id="top">
-    <!-- HERO -->
     <section class="hero hero-photo" role="region" aria-label="Hero">
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="hero-content container center">
-        <h1><span class="eyebrow">Stand Tall, Veteran</span> You Are Not Alone</h1>
-        <a class="btn callout" href="#" aria-disabled="true">Get Support</a>
-        <p class="hotline">If you are in immediate crisis, call or text <strong>988</strong> then press <strong>1</strong> (Veterans Crisis Line).</p>
+
+        <!-- Support buttons -->
+        <div class="support-buttons">
+          <a class="btn callout"
+             href="tel:988"
+             aria-label="Call 988 for the Veterans Crisis Line">
+            📞 Call 988
+          </a>
+
+          <a class="btn callout alt"
+             href="sms:838255"
+             aria-label="Text 838255 for the Veterans Crisis Line">
+            💬 Text 838255
+          </a>
+        </div>
+
+        <p class="hotline">
+          If you are in immediate crisis, call or text <strong>988</strong> then press <strong>1</strong> (Veterans Crisis Line).
+        </p>
       </div>
     </section>
 
@@ -41,7 +58,11 @@
     <section id="help" class="section">
       <div class="container narrow">
         <h2>We’re Here to Help</h2>
-        <p>You don’t have to carry this alone. This site will grow with practical next steps, contacts, and stories from other veterans who’ve been where you are. For now, these buttons are labels only.</p>
+        <p>
+          You don’t have to carry this alone. This site will grow with practical next steps,
+          contacts, and stories from other veterans who’ve been where you are. For now,
+          these buttons are labels only.
+        </p>
         <div class="cta-grid">
           <button class="btn block" data-placeholder>Talk to Someone</button>
           <button class="btn block" data-placeholder>Request a Call Back</button>
@@ -93,6 +114,7 @@
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <p>&copy; <span id="year"></span> One Eternal Mission — Veteran Support.</p>
