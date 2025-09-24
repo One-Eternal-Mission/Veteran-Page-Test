@@ -38,50 +38,63 @@ body{
 .site-nav a:hover{ color:var(--text); }
 .menu-toggle{ display:none; }
 
-/* HERO — full-bleed photo */
+/* HERO — full photo background */
 .hero-photo{
   position:relative;
   min-height: clamp(70vh, 78vh, 86vh);
   display:grid; place-items:center;
-  background-image: url('assets/hero-flag-photo.jpg'); /* your photo */
+  background-image: url('assets/hero-flag-photo.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
 }
 .hero-photo .hero-overlay{
   position:absolute; inset:0;
-  background: linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.55));
+  background: linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.45));
 }
-.hero-content.center{ position:relative; text-align:center; padding: 0 1rem; }
-.hero-content h1{
-  font-size: clamp(2.2rem, 6vw, 4rem);
-  margin:0 0 1rem; line-height:1.1;
-  text-shadow: 0 2px 8px rgba(0,0,0,.6);
+.hero-content.center{ position:relative; text-align:center; padding:0 1rem; }
+
+/* Support buttons container */
+.support-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: clamp(1.25rem, 8vh, 4rem);
 }
-.hero-content .eyebrow{
-  display:block; font-size:.9em; color:var(--ok);
-  letter-spacing:.6px; text-transform:uppercase;
+@media (min-width: 600px) {
+  .support-buttons { flex-direction: row; }
 }
 
 /* Buttons */
-.btn{
-  appearance:none; border:1px solid var(--border);
-  background:var(--card); color:var(--text);
-  border-radius:12px; padding:.7rem 1rem; font-weight:700;
-  cursor:not-allowed; box-shadow:var(--shadow);
+.hero-content .callout {
+  font-size: clamp(1rem, 2.8vw, 1.25rem);
+  padding: 1rem 1.5rem;
+  border-radius: 14px;
+  text-align: center;
+  min-width: 160px;
+  max-width: 220px;
+  display: inline-block;
 }
-.btn.small{ font-size:.9rem; padding:.5rem .8rem; }
-.btn.block{ width:100%; }
-.callout{
-  display:inline-block; margin:.25rem auto 1rem;
+
+/* Primary (call) = red */
+.hero-content .callout {
   background: var(--accent);
-  border: 1px solid color-mix(in oklab, var(--accent) 80%, black);
-  color:#fff; text-decoration:none;
-  padding:.9rem 1.4rem; border-radius:12px; font-weight:800;
+  color: #fff;
+  border: none;
   box-shadow: 0 8px 22px rgba(200,42,42,.35);
-  pointer-events:none; /* placeholder until wired */
 }
-.hotline{ margin-top:.5rem; color:var(--muted); text-shadow:0 1px 3px rgba(0,0,0,.7); }
+
+/* Secondary (text) = dark */
+.hero-content .callout.alt {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  box-shadow: 0 6px 16px rgba(0,0,0,.3);
+}
+
+.hotline{ margin-top:.75rem; color:var(--muted); text-shadow:0 1px 3px rgba(0,0,0,.7); }
 
 /* Sections */
 .section{ padding:3rem 0; background:var(--bg); }
