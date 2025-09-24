@@ -1,10 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Veteran Support</title>
-  <link rel="stylesheet" href="styles.css?v=4" />
+  <!-- Keep the file name EXACTLY "styles.css" and at repo root -->
+  <link rel="stylesheet" href="styles.css?v=7" />
 </head>
 <body>
 
@@ -17,7 +19,7 @@
   </header>
 
   <main>
-    <!-- HERO: locked flag + headline only -->
+    <!-- HERO: locked flag background + headline ONLY -->
     <section class="hero" aria-label="American flag with supportive message">
       <div class="hero-inner">
         <h1 class="headline">
@@ -30,12 +32,16 @@
     <!-- CTA: buttons live BELOW the hero -->
     <section class="cta" aria-label="Immediate support actions">
       <div class="cta-inner">
+        <!-- Red button dials 988 (press 1 after connecting) -->
         <a class="btn btn-primary" href="tel:988" aria-label="Call 988 Veterans Crisis Line (press 1 after connecting)">
           Get Support Now
         </a>
+
+        <!-- Black button opens SMS to 838255 -->
         <a class="btn btn-secondary" href="sms:838255" aria-label="Text 838255 Veterans Crisis Line">
           Text for Support Now
         </a>
+
         <p class="support-note">
           If you are in immediate crisis, call or text <strong>988</strong>, then press <strong>1</strong> for the Veterans Crisis Line.
         </p>
@@ -46,8 +52,9 @@
     <section class="testimonials" id="testimonials" aria-label="Video testimonials">
       <div class="section-inner">
         <h2 class="section-title">Video Testimonials</h2>
+
         <div class="video-grid">
-          <!-- Replace VIDEO_ID with your own YouTube IDs -->
+          <!-- Replace VIDEO_ID_X with your real YouTube IDs -->
           <div class="video">
             <iframe
               src="https://www.youtube-nocookie.com/embed/VIDEO_ID_1"
@@ -65,7 +72,6 @@
         </div>
       </div>
     </section>
-
   </main>
 
   <footer class="site-footer">
@@ -73,7 +79,6 @@
       <small>© <span id="y">2025</span> One Eternal Mission • Veterans Crisis Line: 988 then press 1</small>
     </div>
     <script>
-      // tiny helper to keep the year current
       document.getElementById('y').textContent = new Date().getFullYear();
     </script>
   </footer>
