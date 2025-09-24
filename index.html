@@ -1,127 +1,51 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Veteran Support — You Are Not Alone</title>
-  <meta name="description" content="A calming, supportive place for veterans seeking help. Resources, testimonies, and simple next steps.">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=7">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Veteran Support</title>
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="Veteran Support home">
-        <span class="brand-mark" aria-hidden="true">★</span>
-        <span class="brand-name">Veteran Support</span>
-      </a>
-      <nav class="site-nav" aria-label="Primary">
-        <button class="menu-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
-        <ul id="menu" class="menu">
-          <li><a href="#help">Get Support</a></li>
-          <li><a href="#testimonies">Testimonies</a></li>
-          <li><a href="#resources">Resources</a></li>
-        </ul>
-      </nav>
+
+  <!-- Top bar -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">★ Veteran Support</div>
+      <a class="menu-btn" href="#menu">Menu</a>
     </div>
   </header>
 
-  <!-- HERO -->
-  <main id="top">
-    <section class="hero hero-photo" role="region" aria-label="Hero">
-      <div class="hero-overlay" aria-hidden="true"></div>
-      <div class="hero-content container center">
+  <main>
+    <!-- HERO: fixed flag background + locked headline -->
+    <section class="hero" aria-label="American flag with supportive message">
+      <div class="hero-inner">
+        <h1 class="headline">
+          <span>STAND TALL, VETERAN.</span><br />
+          <span>YOU ARE NOT ALONE.</span>
+        </h1>
+      </div>
+    </section>
 
-        <!-- Buttons placed lower -->
-        <div class="support-buttons lower">
-          <a class="btn callout"
-             href="tel:988"
-             aria-label="Call 988 for the Veterans Crisis Line">
-            Get Support Now
-          </a>
+    <!-- CTA: bubbles live BELOW the hero headline -->
+    <section class="cta" aria-label="Immediate support actions">
+      <div class="cta-inner">
+        <!-- Red button dials 988 (press 1 when connected) -->
+        <a class="btn btn-primary" href="tel:988" aria-label="Call 988 Veterans Crisis Line (press 1 after connecting)">
+          Get Support Now
+        </a>
 
-          <a class="btn callout alt"
-             href="sms:838255"
-             aria-label="Text 838255 for the Veterans Crisis Line">
-            Text for Support Now
-          </a>
-        </div>
+        <!-- Black button opens SMS to 838255 -->
+        <a class="btn btn-secondary" href="sms:838255" aria-label="Text 838255 Veterans Crisis Line">
+          Text for Support Now
+        </a>
 
-        <p class="hotline">
-          If you are in immediate crisis, call or text <strong>988</strong> then press <strong>1</strong> (Veterans Crisis Line).
+        <p class="support-note">
+          If you are in immediate crisis, call or text <strong>988</strong>, then press <strong>1</strong> for the Veterans Crisis Line.
         </p>
-      </div>
-    </section>
-
-    <!-- HELP -->
-    <section id="help" class="section">
-      <div class="container narrow">
-        <h2>We’re Here to Help</h2>
-        <p>
-          You don’t have to carry this alone. This site will grow with practical next steps,
-          contacts, and stories from other veterans who’ve been where you are. For now,
-          these buttons are labels only.
-        </p>
-        <div class="cta-grid">
-          <button class="btn block" data-placeholder>Talk to Someone</button>
-          <button class="btn block" data-placeholder>Request a Call Back</button>
-          <button class="btn block" data-placeholder>Local Support</button>
-          <button class="btn block" data-placeholder>Faith-Based Support</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- TESTIMONIES -->
-    <section id="testimonies" class="section alt">
-      <div class="container">
-        <h2>Video Testimonies (Coming Soon)</h2>
-        <div class="card-grid video-grid">
-          <article class="card video">
-            <div class="thumb" aria-hidden="true">▶</div>
-            <h3>Finding Light Again</h3>
-            <p class="muted">A veteran shares the first step that helped.</p>
-            <button class="btn small" data-placeholder>Play</button>
-          </article>
-          <article class="card video">
-            <div class="thumb" aria-hidden="true">▶</div>
-            <h3>Breaking the Silence</h3>
-            <p class="muted">On asking for help without shame.</p>
-            <button class="btn small" data-placeholder>Play</button>
-          </article>
-          <article class="card video">
-            <div class="thumb" aria-hidden="true">▶</div>
-            <h3>Stronger Together</h3>
-            <p class="muted">Community that makes a difference.</p>
-            <button class="btn small" data-placeholder>Play</button>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- RESOURCES -->
-    <section id="resources" class="section">
-      <div class="container narrow">
-        <h2>Support Resources</h2>
-        <ul class="resources">
-          <li><button class="linklike" data-placeholder>Veterans Crisis Line (988, then 1)</button></li>
-          <li><button class="linklike" data-placeholder>Peer Support Groups</button></li>
-          <li><button class="linklike" data-placeholder>Financial & Housing Aid</button></li>
-          <li><button class="linklike" data-placeholder>Faith & Chaplain Services</button></li>
-        </ul>
-        <p class="muted small">We’ll wire these to real links and videos later.</p>
       </div>
     </section>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>&copy; <span id="year"></span> One Eternal Mission — Veteran Support.</p>
-      <p class="small">No external links are active yet; all buttons are placeholders.</p>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
