@@ -8,7 +8,6 @@ html, body { margin: 0; padding: 0; }
   --accent:#c82a2a; /* bright red CTA */
   --card:#0f1420;
   --border:#1e2636;
-  --ok:#11b981;
   --shadow:0 10px 25px rgba(0,0,0,.4);
 }
 body{
@@ -61,7 +60,9 @@ body{
   gap: 1rem;
   align-items: center;
   justify-content: center;
-  margin-top: clamp(1.25rem, 8vh, 4rem);
+}
+.support-buttons.lower {
+  margin-top: clamp(5rem, 22vh, 9rem); /* pushes buttons lower under flag text */
 }
 @media (min-width: 600px) {
   .support-buttons { flex-direction: row; }
@@ -73,9 +74,10 @@ body{
   padding: 1rem 1.5rem;
   border-radius: 14px;
   text-align: center;
-  min-width: 160px;
-  max-width: 220px;
+  min-width: 170px;
+  max-width: 240px;
   display: inline-block;
+  font-weight: 600;
 }
 
 /* Primary (call) = red */
@@ -94,7 +96,7 @@ body{
   box-shadow: 0 6px 16px rgba(0,0,0,.3);
 }
 
-.hotline{ margin-top:.75rem; color:var(--muted); text-shadow:0 1px 3px rgba(0,0,0,.7); }
+.hotline{ margin-top:1rem; color:var(--muted); text-shadow:0 1px 3px rgba(0,0,0,.7); }
 
 /* Sections */
 .section{ padding:3rem 0; background:var(--bg); }
