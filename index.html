@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Veteran Support</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=4" />
 </head>
 <body>
 
@@ -17,7 +17,7 @@
   </header>
 
   <main>
-    <!-- HERO: fixed flag background + locked headline only -->
+    <!-- HERO: locked flag + headline only -->
     <section class="hero" aria-label="American flag with supportive message">
       <div class="hero-inner">
         <h1 class="headline">
@@ -33,17 +33,50 @@
         <a class="btn btn-primary" href="tel:988" aria-label="Call 988 Veterans Crisis Line (press 1 after connecting)">
           Get Support Now
         </a>
-
         <a class="btn btn-secondary" href="sms:838255" aria-label="Text 838255 Veterans Crisis Line">
           Text for Support Now
         </a>
-
         <p class="support-note">
           If you are in immediate crisis, call or text <strong>988</strong>, then press <strong>1</strong> for the Veterans Crisis Line.
         </p>
       </div>
     </section>
+
+    <!-- VIDEO TESTIMONIALS -->
+    <section class="testimonials" id="testimonials" aria-label="Video testimonials">
+      <div class="section-inner">
+        <h2 class="section-title">Video Testimonials</h2>
+        <div class="video-grid">
+          <!-- Replace VIDEO_ID with your own YouTube IDs -->
+          <div class="video">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/VIDEO_ID_1"
+              title="Testimonial 1" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+          <div class="video">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/VIDEO_ID_2"
+              title="Testimonial 2" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <small>© <span id="y">2025</span> One Eternal Mission • Veterans Crisis Line: 988 then press 1</small>
+    </div>
+    <script>
+      // tiny helper to keep the year current
+      document.getElementById('y').textContent = new Date().getFullYear();
+    </script>
+  </footer>
 
 </body>
 </html>
