@@ -1,87 +1,84 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Veteran Support</title>
-  <!-- Keep the file name EXACTLY "styles.css" and at repo root -->
-  <link rel="stylesheet" href="styles.css?v=7" />
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
+  <!-- Fixed background layer -->
+  <div class="bg" role="img" aria-label="American flag at sunset with message: Stand tall, Veteran — you are not alone."></div>
+  <div class="shade" aria-hidden="true"></div>
 
-  <!-- Top bar -->
+  <!-- Off-canvas menu trigger -->
   <header class="topbar">
-    <div class="topbar-inner">
-      <div class="brand">★ Veteran Support</div>
-      <a class="menu-btn" href="#menu">Menu</a>
-    </div>
+    <button class="hamburger" aria-label="Open menu" aria-controls="sidemenu" aria-expanded="false">☰</button>
+    <h1 class="sr-only">Veteran Support</h1>
   </header>
 
-  <main>
-    <!-- HERO: locked flag background + headline ONLY -->
-    <section class="hero" aria-label="American flag with supportive message">
-      <div class="hero-inner">
-        <h1 class="headline">
-          <span>STAND TALL, VETERAN.</span><br />
-          <span>YOU ARE NOT ALONE.</span>
-        </h1>
+  <!-- Off-canvas menu -->
+  <aside id="sidemenu" class="sidemenu" aria-hidden="true">
+    <div class="menu-inner">
+      <div class="menu-header">
+        <div class="support-text">Click here to help support</div>
       </div>
+
+      <nav class="menu-links" aria-label="Primary">
+        <a href="#" class="menu-link">Home</a>
+        <a href="#" class="menu-link">Resources</a>
+        <a href="#" class="menu-link">Testimonials</a>
+        <a href="#" class="menu-link">About</a>
+      </nav>
+
+      <div class="menu-footer">
+        <h2 class="settings-title">Settings</h2>
+        <label class="slider-label" for="brightnessRange">Background Brightness</label>
+        <input id="brightnessRange" type="range" min="50" max="110" value="80" />
+      </div>
+    </div>
+  </aside>
+
+  <!-- Slide-out backdrop -->
+  <div class="backdrop" hidden></div>
+
+  <main class="content">
+    <!-- Hero message (kept visible as overlay in case user's image text is obscured) -->
+    <section class="hero-callout" aria-live="polite">
+      <p class="hero-text">Stand tall, Veteran — you are not alone.</p>
     </section>
 
-    <!-- CTA: buttons live BELOW the hero -->
-    <section class="cta" aria-label="Immediate support actions">
-      <div class="cta-inner">
-        <!-- Red button dials 988 (press 1 after connecting) -->
-        <a class="btn btn-primary" href="tel:988" aria-label="Call 988 Veterans Crisis Line (press 1 after connecting)">
-          Get Support Now
-        </a>
-
-        <!-- Black button opens SMS to 838255 -->
-        <a class="btn btn-secondary" href="sms:838255" aria-label="Text 838255 Veterans Crisis Line">
-          Text for Support Now
-        </a>
-
-        <p class="support-note">
-          If you are in immediate crisis, call or text <strong>988</strong>, then press <strong>1</strong> for the Veterans Crisis Line.
-        </p>
-      </div>
+    <!-- Crisis buttons -->
+    <section class="cta">
+      <a class="btn btn-red" href="tel:988" aria-label="Call 988 Veterans Crisis Line">Get Support Now</a>
+      <a class="btn btn-black" href="sms:838255" aria-label="Text 838255 Veterans Text Line">Text for Support</a>
     </section>
 
-    <!-- VIDEO TESTIMONIALS -->
-    <section class="testimonials" id="testimonials" aria-label="Video testimonials">
-      <div class="section-inner">
-        <h2 class="section-title">Video Testimonials</h2>
-
-        <div class="video-grid">
-          <!-- Replace VIDEO_ID_X with your real YouTube IDs -->
-          <div class="video">
-            <iframe
-              src="https://www.youtube-nocookie.com/embed/VIDEO_ID_1"
-              title="Testimonial 1" frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen></iframe>
-          </div>
-          <div class="video">
-            <iframe
-              src="https://www.youtube-nocookie.com/embed/VIDEO_ID_2"
-              title="Testimonial 2" frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen></iframe>
-          </div>
+    <!-- Video placeholder section -->
+    <section class="videos">
+      <h2>Veteran Stories & Civilian Life Guides</h2>
+      <p class="muted">Real videos will go here. For now, this is a placeholder.</p>
+      <div class="video-grid">
+        <div class="video-card">
+          <video controls preload="metadata" poster="assets/placeholder.png">
+            <source src="" type="video/mp4" />
+          </video>
+          <div class="video-meta">Testimonial Placeholder</div>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata" poster="assets/placeholder.png">
+            <source src="" type="video/mp4" />
+          </video>
+          <div class="video-meta">After-Service Life Tips (Placeholder)</div>
         </div>
       </div>
     </section>
+
+    <footer class="footer">
+      <small>&copy; <span id="year"></span> Veteran Support</small>
+    </footer>
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <small>© <span id="y">2025</span> One Eternal Mission • Veterans Crisis Line: 988 then press 1</small>
-    </div>
-    <script>
-      document.getElementById('y').textContent = new Date().getFullYear();
-    </script>
-  </footer>
-
+  <script src="js/app.js"></script>
 </body>
 </html>

@@ -1,16 +1,30 @@
-# Veteran Support — You Are Not Alone
+# Veteran Support Site (Starter)
 
-A calm, supportive landing page for veterans in need. Hero text: **Stand Tall, Veteran — You Are Not Alone**.
+This is a clean foundation for your veteran support website. 
+Add your own background image (the flag with the text "STAND TALL, VETERAN YOU ARE NOT ALONE").
 
-## Includes
-- `index.html` — updated sections (Hero, We’re Here to Help, Video Testimonies placeholder, Resources)
-- `styles.css` — refreshed theme + supportive accent colors
-- `script.js` — mobile menu + placeholder alerts
-- `assets/hero-support.svg` — hero art
-- `assets/favicon.svg` — favicon
+## How to use
 
-## Deploy
-1. Upload these files at the repo root (replace the previous ones).
-2. GitHub Pages: Settings → Pages → Deploy from branch → `main` → `/ (root)`.
+1. Put your background image at: `assets/hero-flag.jpg` (replace the placeholder).
+2. Open `index.html` in a browser to preview locally.
+3. For GitHub Pages:
+   - Create a new repo and upload everything in this zip to the root of the repo.
+   - Commit & push.
+   - In repo settings, enable GitHub Pages for the `main` branch (root).
+   - Your site will be live at the Pages URL.
 
-— Generated 2025-09-23
+## Buttons
+- Red button calls the Veterans Crisis Line: dials **988** (does *not* press 1 automatically).
+- Black button opens SMS to **838255** (Veterans text line).
+
+## Off‑canvas Menu
+- Opens from the left via the ☰ button.
+- "Click here to help support" text appears at the top (not yet clickable).
+- "Settings" is pinned at the bottom with a Brightness slider that adjusts background brightness only.
+
+## Files
+- `index.html` – page markup
+- `css/styles.css` – styles & layout
+- `js/app.js` – menu + brightness logic
+- `assets/hero-flag.jpg` – **add your image here** (filename must match)
+- `assets/placeholder.png` – tiny placeholder used for the temp video poster
