@@ -14,6 +14,9 @@
   --maxw: 1000px;
   --radius: 12px;
   --shadow: 0 10px 30px rgba(0,0,0,.35);
+
+  /* how far down the page content starts beneath the hero background */
+  --hero-spacer: 52vh;       /* tweak to 48–60vh to taste */
 }
 
 * { box-sizing: border-box; }
@@ -84,7 +87,16 @@ body { color: var(--text); font-family: system-ui, -apple-system, Segoe UI, Robo
 .sidemenu.open{ transform: translateX(0); }
 .menu-inner{ display: flex; flex-direction: column; height: 100%; }
 .menu-header{ padding: 20px; border-bottom: 1px solid rgba(255,255,255,.08); }
-.support-text{ font-weight: 700; letter-spacing:.2px; }
+.support-link{
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing:.2px;
+  background: rgba(255,255,255,.06);
+  padding: 10px 12px;
+  border-radius: 8px;
+}
 .menu-links{ display: grid; gap: 10px; padding: 16px 20px; }
 .menu-link{ color: #fff; text-decoration: none; padding: 10px 12px; border-radius: 8px; background: rgba(255,255,255,.06); }
 .menu-link:active{ transform: translateY(1px); }
@@ -97,11 +109,12 @@ body { color: var(--text); font-family: system-ui, -apple-system, Segoe UI, Robo
   position: fixed; inset:0; background: rgba(0,0,0,.4); z-index: 8;
 }
 
-/* Content */
+/* Content and hero spacer */
 .content{ max-width: var(--maxw); margin: 0 auto; padding: 24px var(--pad) 60px; }
+.hero-spacer{ height: var(--hero-spacer); }
 
 /* Buttons */
-.cta{ display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin: 22px 0 40px; }
+.cta{ display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin: 0 0 40px; }
 .btn{
   display:inline-block; text-decoration:none; padding: 14px 18px; border-radius: 999px;
   font-weight: 700; box-shadow: var(--shadow);
@@ -123,4 +136,5 @@ body { color: var(--text); font-family: system-ui, -apple-system, Segoe UI, Robo
 /* Larger screens */
 @media(min-width: 720px){
   .video-grid{ grid-template-columns: 1fr 1fr; }
+  :root{ --hero-spacer: 58vh; } /* a touch more space on desktop/tablet */
 }
