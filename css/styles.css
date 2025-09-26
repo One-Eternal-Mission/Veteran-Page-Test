@@ -1,92 +1,142 @@
-/* ---------- Theme fallbacks (use your existing vars if present) ---------- */
+/* ---------- Theme ---------- */
 :root{
-  --bg: #0b0d10;               /* page background */
-  --text: #f3f4f6;             /* main text color */
-  --muted: #cbd5e1;
-  --primary: #e11d2b;          /* brand red */
+  --bg-brightness: 0.8;     /* 0.5 - 1.1 via slider */
+  --shade: rgba(0,0,0,.25); /* darkens foreground for readability */
+  --text: #f3f4f6;
+  --muted: #d1d5db;
+
+  --primary: #e11d2b;        /* red button */
   --primary-ink: #ffffff;
-  --maxw: 1024px;
-  --pad: 20px;
+  --secondary: #0f172a;      /* black button */
+  --secondary-ink: #ffffff;
+
+  --pad: 18px;
+  --maxw: 1000px;
+  --radius: 12px;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+
+  /* how far down content starts beneath the hero background */
+  --hero-spacer: 52vh;       /* tweak to 48–60vh to taste */
 }
 
-/* ---------- Layout basics ---------- */
 * { box-sizing: border-box; }
-html, body { height: 100%; margin: 0; background: var(--bg); color: var(--text); }
+html, body { height: 100%; margin: 0; }
+body { color: var(--text); font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
 
-.container{
-  width: min(100% - 2*var(--pad), var(--maxw));
-  margin-inline: auto;
+/* Fixed background — never resizes while scrolling */
+.bg{
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw;
+  height: 100vh;   /* fallback */
+  height: 100svh;  /* lock to small viewport so URL bar changes don't scale the image */
+  background: url('../assets/hero-flag.jpg') center / cover no-repeat;
+  filter: brightness(var(--bg-brightness));
+  z-index: -2;
+  transform: translateZ(0);  /* prevents subtle re-raster/scale on iOS */
 }
 
-.site-header, .site-footer{
-  display: flex; align-items: center;
-  min-height: 56px;
-}
-.site-header{ justify-content: space-between; padding: 8px var(--pad); }
-.site-footer{ padding: 24px var(--pad); color: var(--muted); }
-
-.logo{ color: var(--text); text-decoration: none; font-weight: 700; letter-spacing: .3px; }
-.nav a{
-  color: var(--muted); text-decoration: none; margin-left: 16px; font-weight: 500;
-}
-.nav a.active, .nav a:hover{ color: var(--text); }
-
-/* ---------- About hero with baked-in gradient image ---------- */
-/* Save your image at: assets/hand-shake.jpg */
-.page-about .about-hero{
-  background-image: url("assets/hand-shake.jpg");   /* gradient is baked into the image */
-  background-size: cover;
-  background-position: left 40% center;             /* keeps handshake nicely framed */
-  background-repeat: no-repeat;
-
-  min-height: min(70svh, 760px);
-  display: flex; align-items: center;
-  color: var(--text);
+/* subtle overlay for readability */
+.shade{
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw;
+  height: 100vh;   /* fallback */
+  height: 100svh;  /* keep the overlay locked too */
+  background: var(--shade);
+  z-index: -1;
 }
 
-/* Optional: gentle text shadow for readability on bright screens */
-.page-about .about-hero .hero-content{
-  padding: clamp(48px, 8vw, 120px) 0;
-  text-shadow: 0 2px 12px rgba(0,0,0,.45);
-  max-width: 720px;
-}
-.page-about .about-hero h1{
-  margin: 0 0 .5rem; font-size: clamp(32px, 6vw, 56px); line-height: 1.05;
-}
-.page-about .about-hero p{
-  margin: 0 0 1.25rem; color: #e8eaee; max-width: 60ch; font-size: clamp(16px, 2.4vw, 18px);
+/* Accessibility helpers */
+.sr-only{
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
 }
 
-/* Mobile crop */
-@media (max-width: 768px){
-  .page-about .about-hero{
-    background-position: center top;     /* tighter crop for phones */
-    min-height: 60svh;
-  }
-  .nav{ display:none; }                  /* hide simple nav on small screens (optional) */
+/* Topbar + header brand */
+.topbar{
+  position: sticky; top: 0; display: flex; align-items: center;
+  padding: var(--pad); z-index: 5;
+}
+.theme-bar{
+  justify-content: space-between;
+  backdrop-filter: blur(6px);
+  background: rgba(0,0,0,.35);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.brand{
+  display: flex; align-items: center; gap: 10px; margin-left: 6px;
+  font-weight: 800; letter-spacing:.3px;
+}
+.star{ color: #f7c948; } /* gold */
+.brand-text{ text-transform: capitalize; }
+.hamburger{
+  font-size: 28px; background: rgba(0,0,0,.45);
+  color: #fff; border: none; padding: 8px 12px; border-radius: 10px;
+  box-shadow: var(--shadow);
+  margin-right: auto;
 }
 
-/* Optional: fixed background on desktop (iOS often ignores it) */
-@media (pointer: fine) and (min-width: 1024px){
-  .page-about .about-hero{ background-attachment: fixed; }
+/* Off-canvas menu */
+.sidemenu{
+  position: fixed; inset: 0 auto 0 0; width: 80vw; max-width: 320px;
+  transform: translateX(-100%);
+  transition: transform .25s ease;
+  background: rgba(15,23,42,.96);
+  color: #fff; z-index: 10;
+  box-shadow: var(--shadow);
 }
-
-/* ---------- Content styles ---------- */
-.about-content{ padding: 40px var(--pad) 80px; }
-.about-content h2{ margin-top: 0; }
-.about-content ul{ line-height: 1.7; }
-
-.btn{
-  display: inline-block;
-  padding: 12px 18px;
-  border-radius: 10px;
+.sidemenu.open{ transform: translateX(0); }
+.menu-inner{ display: flex; flex-direction: column; height: 100%; }
+.menu-header{ padding: 20px; border-bottom: 1px solid rgba(255,255,255,.08); }
+.support-link{
+  display: block;
+  color: #fff;
   text-decoration: none;
   font-weight: 700;
-  transition: transform .08s ease, background-color .2s ease, color .2s ease;
+  letter-spacing:.2px;
+  background: rgba(255,255,255,.06);
+  padding: 10px 12px;
+  border-radius: 8px;
 }
-.btn.primary{
-  background: var(--primary); color: var(--primary-ink);
-  box-shadow: 0 8px 24px rgba(0,0,0,.35);
+.menu-links{ display: grid; gap: 10px; padding: 16px 20px; }
+.menu-link{ color: #fff; text-decoration: none; padding: 10px 12px; border-radius: 8px; background: rgba(255,255,255,.06); }
+.menu-link:active{ transform: translateY(1px); }
+.menu-footer{ margin-top: auto; padding: 18px 20px; border-top: 1px solid rgba(255,255,255,.08); }
+.settings-title{ margin: 0 0 10px 0; font-size: 14px; opacity: .9; }
+.slider-label{ display:block; font-size: 12px; opacity: .8; margin-bottom: 4px; }
+#brightnessRange{ width: 100%; }
+
+.backdrop{
+  position: fixed; inset:0; background: rgba(0,0,0,.4); z-index: 8;
 }
-.btn.primary:hover{ transform: translateY(-1px); }
-.btn.primary:active{ transform: translateY(0); }
+
+/* Content and hero spacer */
+.content{ max-width: var(--maxw); margin: 0 auto; padding: 24px var(--pad) 60px; }
+.hero-spacer{ height: var(--hero-spacer); }
+
+/* Buttons */
+.cta{ display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin: 0 0 40px; }
+.btn{
+  display:inline-block; text-decoration:none; padding: 14px 18px; border-radius: 999px;
+  font-weight: 700; box-shadow: var(--shadow);
+}
+.btn-red{ background: var(--primary); color: var(--primary-ink); }
+.btn-black{ background: var(--secondary); color: var(--secondary-ink); }
+
+/* Video placeholders */
+.videos{ background: rgba(0,0,0,.35); padding: 18px; border-radius: var(--radius); }
+.videos h2{ margin-top: 0; }
+.muted{ color: var(--muted); margin-top: -6px; }
+.video-grid{ display: grid; grid-template-columns: 1fr; gap: 16px; }
+.video-card{ background: rgba(255,255,255,.06); border-radius: var(--radius); padding: 12px; }
+.video-card video{ width: 100%; height: 220px; background: rgba(0,0,0,.5); border-radius: 8px; display: block; }
+
+/* Footer */
+.footer{ text-align:center; margin-top: 40px; color: var(--muted); }
+
+/* Larger screens */
+@media(min-width: 720px){
+  .video-grid{ grid-template-columns: 1fr 1fr; }
+  :root{ --hero-spacer: 58vh; } /* a touch more space on desktop/tablet */
+}
