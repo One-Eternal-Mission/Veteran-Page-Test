@@ -1,60 +1,91 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About | One Eternal Mission</title>
-  <link rel="stylesheet" href="about.css" />
-  <meta name="description" content="One Eternal Mission—supporting veterans through awareness and donations, one product and one conversation at a time." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Veteran Support</title>
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
-<body class="page-about">
-  <header class="site-header">
-    <a href="index.html" class="logo">One Eternal Mission</a>
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a class="active" href="about.html">About</a>
-    </nav>
+<body>
+  <!-- Fixed background layer -->
+  <div class="bg" role="img" aria-label="American flag at sunset."></div>
+  <div class="shade" aria-hidden="true"></div>
+
+  <!-- Header bar + menu trigger -->
+  <header class="topbar theme-bar">
+    <button class="hamburger" aria-label="Open menu" aria-controls="sidemenu" aria-expanded="false">☰</button>
+    <div class="brand">
+      <span class="star" aria-hidden="true">★</span>
+      <span class="brand-text">Veteran Support</span>
+    </div>
+    <h1 class="sr-only">Veteran Support</h1>
   </header>
 
-  <!-- Hero uses background image; aria-label provides accessible alt text -->
-  <section class="about-hero" role="img"
-    aria-label="A veteran and his civilian self shake hands; identical bracelet and tattoo link the two.">
-    <div class="container hero-content">
-      <h1>About Our Mission</h1>
-      <p>
-        We build products that spark conversations and funnel support to veterans in need. 
-        Every design has a purpose; every purchase helps us fund real resources.
-      </p>
-      <a href="#our-story" class="btn primary">Our Story</a>
-    </div>
-  </section>
+  <!-- Off-canvas menu -->
+  <aside id="sidemenu" class="sidemenu" aria-hidden="true">
+    <div class="menu-inner">
+      <div class="menu-header">
+        <a
+          class="support-link"
+          href="https://1x2f63-7u.myshopify.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Click here to help support</a>
+      </div>
 
-  <main id="our-story" class="about-content">
-    <div class="container">
-      <h2>Why We Exist</h2>
-      <p>
-        We’re here to raise awareness, reduce stigma, and contribute a portion of proceeds to proven veteran-support organizations.
-        Transparency matters—each product page explains exactly how it helps.
-      </p>
+      <nav class="menu-links" aria-label="Primary">
+        <a href="index.html" class="menu-link" aria-current="page">Home</a>
+        <a href="#" class="menu-link">Resources</a>
+        <a href="#" class="menu-link">Testimonials</a>
+        <a href="about.html" class="menu-link">About</a>
+      </nav>
 
-      <h2>How It Works</h2>
-      <ul>
-        <li>Designs that start meaningful conversations.</li>
-        <li>Clear donation callouts on qualifying products.</li>
-        <li>Community-first content: resources, hotlines, and next steps.</li>
-      </ul>
+      <div class="menu-footer">
+        <h2 class="settings-title">Settings</h2>
+        <label class="slider-label" for="brightnessRange">Background Brightness</label>
+        <input id="brightnessRange" type="range" min="50" max="110" value="80" />
+      </div>
     </div>
+  </aside>
+
+  <!-- Slide-out backdrop -->
+  <div class="backdrop" hidden></div>
+
+  <main class="content">
+    <!-- Spacer so the flag + message are fully visible first -->
+    <section class="hero-spacer" aria-hidden="true"></section>
+
+    <!-- Crisis buttons -->
+    <section class="cta">
+      <a class="btn btn-red" href="tel:988" aria-label="Call 988 Veterans Crisis Line">Get Support Now</a>
+      <a class="btn btn-black" href="sms:838255" aria-label="Text 838255 Veterans Text Line">Text for Support</a>
+    </section>
+
+    <!-- Video placeholder section -->
+    <section class="videos">
+      <h2>Veteran Stories &amp; Civilian Life Guides</h2>
+      <p class="muted">Real videos will go here. For now, this is a placeholder.</p>
+      <div class="video-grid">
+        <div class="video-card">
+          <video controls preload="metadata" poster="assets/placeholder.png">
+            <source src="" type="video/mp4" />
+          </video>
+          <div class="video-meta">Testimonial Placeholder</div>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata" poster="assets/placeholder.png">
+            <source src="" type="video/mp4" />
+          </video>
+          <div class="video-meta">After-Service Life Tips (Placeholder)</div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <small>&copy; <span id="year"></span> Veteran Support</small>
+    </footer>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <small>© <span id="y"></span> One Eternal Mission</small>
-    </div>
-  </footer>
-
-  <script>
-    // year stamp
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+  <script src="js/app.js"></script>
 </body>
 </html>
