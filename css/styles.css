@@ -22,7 +22,7 @@
 
 /* Base */
 * { box-sizing: border-box; }
-html, body { height: 100%; margin: 0; overscroll-behavior-y: none; background: #000; }
+html, body { height: 100%; margin: 0; overscroll-behavior-y: none; } /* no global background */
 body { color: var(--text); font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
 [hidden]{ display:none !important; }
 
@@ -39,8 +39,8 @@ body { color: var(--text); font-family: system-ui, -apple-system, Segoe UI, Robo
 
   background: url('../assets/hero-flag.jpg') center / cover no-repeat;
   filter: brightness(var(--bg-brightness));
-  z-index: -2;
-  transform: translateZ(0);  /* helps iOS keep it crisp */
+  z-index: -2;                 /* behind everything */
+  transform: translateZ(0);    /* helps iOS keep it crisp */
 }
 
 /* subtle overlay for readability */
@@ -144,7 +144,14 @@ body { color: var(--text); font-family: system-ui, -apple-system, Segoe UI, Robo
 .video-card video{ width: 100%; height: 220px; background: rgba(0,0,0,.5); border-radius: 8px; display: block; object-fit: cover; }
 
 /* Footer */
-.footer{ text-align:center; margin-top: 40px; color: var(--muted); }
+.footer{
+  text-align:center;
+  margin-top: 40px;
+  color: var(--muted);
+  background: rgba(0,0,0,.85);  /* dark footer only */
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
 
 /* Larger screens */
 @media(min-width: 720px){
